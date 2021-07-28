@@ -4,6 +4,7 @@ const logger = require('./middleware/logger');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
 const colors = require('colors');
+const errorHandler = require('./middleware/error');
 
 const app = express();
 
@@ -31,6 +32,8 @@ const bootcamps = require('./routes/bootcamps');
 
 // Mount routers
 app.use('/api/v1/bootcamps', bootcamps);
+
+app.use(errorHandler);
 
 const server = app.listen(port, () => {
   console.log(

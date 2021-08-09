@@ -10,11 +10,11 @@ const {
 } = require('../controller/bootcamps');
 
 const Bootcamp = require('../models/Bootcamp');
-const advancedResults = require('../middleware/advancedResults');
 
 // Include other resource routers
 const courseRouter = require('./courses');
 const { model } = require('mongoose');
+const advancedResults = require('../middleware/advancedResults');
 const { protect } = require('../middleware/auth');
 
 const router = express.Router();

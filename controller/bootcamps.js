@@ -184,7 +184,7 @@ exports.bootcampPhotoUpload = asyncHandler(async (req, res, next) => {
   if (!req.files) {
     return next(new ErrorResponse(`Please upload a file`, 400));
   }
-  console.log(req.files.file);
+  // console.log(req.files.file);
   const file = req.files.file;
 
   // Make sure the image is a photo
@@ -217,5 +217,5 @@ exports.bootcampPhotoUpload = asyncHandler(async (req, res, next) => {
       data: file.name,
     });
   });
-  console.log(file.name);
+  // console.log(file.name);
 });

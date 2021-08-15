@@ -1,7 +1,6 @@
 const path = require('path');
 const express = require('express');
 const dotenv = require('dotenv');
-const logger = require('./middleware/logger');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
 const colors = require('colors');
@@ -31,9 +30,6 @@ app.use(express.json());
 
 // Cookie parser
 app.use(cookieParser());
-
-// Dev logging middleware
-app.use(logger);
 
 // File uploading
 app.use(fileupload());
